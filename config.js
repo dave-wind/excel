@@ -6,7 +6,7 @@ module.exports = {
 	/**
 	 * basePath: 访问路径
 	 */
-	basePath: '/happy-wind',
+	basePath: '',
 	/**
 	 * publicPath: 打包路径
 	 * webpack打包使用
