@@ -1,6 +1,7 @@
 language: node_js
 
-node_js: stable
+node_js: 
+ - "10.15.1"
 
 # Travis-CI Caching
 cache:
@@ -35,4 +36,4 @@ branches:
 # Note: you should set Environment Variables here or 'Settings' on travis-ci.org
 env:
   global:
-    - GH_REF: github.com/dave-wind/excel-online.git
+    - GH_REF: github.com/dave-wind/excel.git
