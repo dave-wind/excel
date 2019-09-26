@@ -11,5 +11,5 @@ module.exports = {
 	 * publicPath: 打包路径
 	 * webpack打包使用
 	 */
-	publicPath: 'excel/scripts/',
+	publicPath: 'scripts/',
 }
