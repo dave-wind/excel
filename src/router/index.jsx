@@ -8,7 +8,7 @@ const RouterConfig = basePath => {
   return () => (
       <Router>
         <Switch>
-          <Route path={`${basePath}/excel`} component={Index}/>
+          <Route path={`${basePath}/index`} component={Index}/>
         </Switch>
       </Router>
   );
