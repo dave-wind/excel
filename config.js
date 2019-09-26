@@ -6,7 +6,7 @@ module.exports = {
 	/**
 	 * basePath: 访问路径
 	 */
-	basePath: '/dave-wind.github.io/excel',
+	basePath: '/excel',
 	/**
 	 * publicPath: 打包路径
 	 * webpack打包使用
