@@ -1,0 +1,14 @@
+html,body,p,figure,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,button{margin:0;padding:0;}
+body,input,button,h1,h2,h3,h4,h5,h6{font-family:"Microsoft YaHei","Hiragino Sans GB",Arial,"Lucida Grande",Verdana;}
+html{margin:auto;min-width:320px;max-width:1200px;font-size:4vw;}
+h1,h2,h3,h4,h5,h6{font-weight:400;}
+ul,ol,li{list-style:none;}
+input,button{display:block;outline:none;border:0;}
+b{font-weight:400;}
+i{font-style:normal;}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;}
+input[type=number]{-moz-appearance:textfield;}
+body{background:#f2f2f2;}
+a{text-decoration:none}
+.app-wrapper{position:absolute;width:100%;max-width:1200px;height:100%;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-flex-direction:column;flex-direction:column;}
+.app-content{position:relative;-webkit-box-flex:1;-webkit-flex:1;flex:1;overflow:scroll;-webkit-overflow-scrolling:touch;}

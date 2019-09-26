@@ -1,0 +1,17 @@
+/**
+ * 像素转换rem
+ * @param px单位
+ * @return rem单位
+ * @example rem(100px)
+ */
+@function rem($px) {
+ @return $px / 30px * 1rem;
+}
+
+/**
+ * 图片基本路径
+ * @type {String}
+ * @example # {$base}
+ */
+// $base: "../images"
+$base: ""

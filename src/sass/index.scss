@@ -1,0 +1,104 @@
+$color: rgb(255, 182, 90);
+$bg: #fff;
+$theme: #f39800;
+
+@import '../vendors/common.css';
+@import "../components/Loading/Loading.scss";
+
+html, body {
+    min-height: 100%;
+    background: $bg;
+}
+
+* {
+    box-sizing: border-box;
+    &:after, &:before {
+        box-sizing: border-box;
+    }
+}
+
+.flex-wrap {
+    display: flex;
+}
+
+.flex-vertical {
+    justify-content: center;
+}
+
+.flex-align {
+    align-items: center;
+}
+
+.relative {
+    position: relative;
+}
+
+// 上传功能
+
+.file-uploader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    outline: none;
+    opacity: 0;
+    background-color: transparent;
+}
+
+.upload-text {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.remove {
+    float: right;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #1890ff;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.fixed-header {
+    position: fixed;
+    left: 50%;
+    top: 0;
+    width: 1200px;
+    margin-left: -600px;
+    z-index: 999999;
+    background-color: #ffffff;
+}
+
+// Table
+
+.editable-row .ant-form-explain {
+    position: absolute;
+    font-size: 12px;
+    margin-top: -4px;
+}
+
+.none {
+    display: none !important;
+}
+
+.ant-table-tbody > tr > td {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.ant-table-tbody > tr > td, .ant-table-thead > tr > th {
+    padding: 12px !important;
+}
+
+.download {
+    position: absolute;
+    left: 0;
+    top: -50px;
+}
+
+.total {
+    font-size: 14px;
+    color: #1890ff;
+    line-height: 30px;
+}

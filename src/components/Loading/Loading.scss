@@ -1,0 +1,64 @@
+div.loading-wrap {
+ position: fixed;
+ left: 50%;
+ top: 50%;
+ width: 100px;
+ height: 100px;
+ margin-left: -50px;
+ margin-top: -50px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ z-index: 100;
+ background-color: transparent;
+}
+
+.loading {
+ width: 6px;
+ height: 6px;
+ border-radius: 100%;
+ box-shadow: 0 -20px 0 1px $theme, /* top, 1px expand */
+ 20px 0 $theme, /* right */
+ 0 20px $theme, /* bottom */
+ -20px 0 $theme, /* left */
+ -14px -14px 0 1px $theme, /* left-top, 0.5px expand */
+ 14px -14px 0 3px $theme, /* right-top, 1.5px expand */
+ 14px 14px $theme, /* right-bottom */
+ -14px 14px $theme; /* left-bottom */
+ -webkit-animation: spin 1s steps(8) infinite;
+ animation: spin 1s steps(8) infinite; /* step 默认 end */
+ position: absolute;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ margin: auto;
+}
+
+// animation
+@-webkit-keyframes spin {
+ 0% {
+  -webkit-transform: rotate(0deg);
+ }
+ 100% {
+  -webkit-transform: rotate(360deg);
+ }
+}
+
+@keyframes spin {
+ 0% {
+  transform: rotate(0deg);
+ }
+ 100% {
+  transform: rotate(360deg);
+ }
+}
+
+@-moz-keyframes spin {
+ 0% {
+  -moz-transform: rotate(0deg);
+ }
+ 100% {
+  -moz-transform: rotate(360deg);
+ }
+}

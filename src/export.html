@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>导出生成excel</title>
+    <script src="https://cdn.bootcss.com/xlsx/0.15.1/xlsx.full.min.js"></script>
+    <script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+</head>
+
+<body>
+<button onclick="downloadExl(students)">导出</button>
+<script>
+  var students = [{
+    "name": "小明1",
+    "age": "6",
+    "sex": "男",
+    "height": "60"
+  }, {
+    "name": "小明2",
+    "age": "7",
+    "sex": "男",
+    "height": "70"
+  }, {
+    "name": "小明3",
+    "age": "8",
+    "sex": "男",
+    "height": "80"
+  }];
+
+  function downloadExl(data, type) {
+
+    var keys = Object.keys(data[0]);
+    console.log('keys----------------', keys);
+    return
+    var firstRow = {};
+    keys.forEach(function (item) {
+      firstRow[item] = item;
+    });
+    data.unshift(firstRow);
+
+    var content = {};
+
+    // 把json格式的数据转为excel的行列形式
+    var sheetsData = data.map(function (item, rowIndex) {
+      return keys.map(function (key, columnIndex) {
+        return Object.assign({}, {
+          value: item[key],
+          position: (columnIndex > 25 ? getCharCol(columnIndex) : String.fromCharCode(65 + columnIndex)) + (rowIndex + 1),
+        });
+      });
+    }).reduce(function (prev, next) {
+      return prev.concat(next);
+    });
+
+    sheetsData.forEach(function (item, index) {
+      content[item.position] = {v: item.value};
+    });
+
+    //设置区域,比如表格从A1到D10,SheetNames:标题，
+    var coordinate = Object.keys(content);
+    console.log('coordinate-----------', coordinate);
+    var workBook = {
+      SheetNames: ["helloSheet"],
+      Sheets: {
+        "helloSheet": Object.assign({}, content, {"!ref": coordinate[0] + ":" + coordinate[coordinate.length - 1]}),
+      }
+    };
+    console.log('--work-------', workBook);
+    //这里的数据是用来定义导出的格式类型
+    var excelData = XLSX.write(workBook, {bookType: "xlsx", bookSST: false, type: "binary"});
+    var blob = new Blob([string2ArrayBuffer(excelData)], {type: ""});
+    console.log('---workBook-----------------', workBook);
+    // saveAs(blob, "hello.xlsx");
+  }
+
+  //字符串转字符流
+  function string2ArrayBuffer(s) {
+    var buf = new ArrayBuffer(s.length);
+    var view = new Uint8Array(buf);
+    for (var i = 0; i != s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
+    return buf;
+  }
+
+  // 将指定的自然数转换为26进制表示。映射关系：[0-25] -> [A-Z]。
+  function getCharCol(n) {
+    let temCol = "",
+        s = "",
+        m = 0
+    while (n > 0) {
+      m = n % 26 + 1
+      s = String.fromCharCode(m + 64) + s
+      n = (n - m) / 26
+    }
+    return s
+  }
+</script>
+</body>
+
+</html>

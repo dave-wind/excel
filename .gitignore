@@ -1,0 +1,4 @@
+﻿# 去掉依赖包
+node_modules/
+dist/
+.idea/
