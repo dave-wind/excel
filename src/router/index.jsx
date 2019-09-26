@@ -8,7 +8,8 @@ const RouterConfig = basePath => {
   return () => (
       <Router>
         <Switch>
-          <Route path={`${basePath}/index`} component={Index}/>
+          <Route path={`${basePath}/index.html`} component={Index}/>
+          <Redirect to={'/index.html'}/>
         </Switch>
       </Router>
   );
