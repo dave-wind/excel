@@ -77,13 +77,13 @@ if (process.env.NODE_ENV === 'production') {
          */
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn|en-us/),
 
-        new BundleAnalyzerPlugin({
-          analyzerMode: 'server',
-          analyzerHost: '127.0.0.1',
-          analyzerPort: '8888',
-          reportFilename: '../report.html',
-          statsOptions: {source: false}
-        })
+//         new BundleAnalyzerPlugin({
+//           analyzerMode: 'server',
+//           analyzerHost: '127.0.0.1',
+//           analyzerPort: '8888',
+//           reportFilename: '../report.html',
+//           statsOptions: {source: false}
+//         })
     )
 }
 
