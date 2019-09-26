@@ -1,6 +1,9 @@
 ### Excel Online Editor
 > 当你凝视着深渊的时候，深渊也在凝视着你，当你在玩框架的时候，框架也在玩你
 
+## 项目地址
+* [excel](https://dave-wind.github.io/excel/index.html)
+
 #### 项目描述
 ```txt
 一款纯html在线 Excel 编辑器 支持 上传 下载 编辑 查找 删除 重刷新  
